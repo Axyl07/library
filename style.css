@@ -1,27 +1,48 @@
-/* *{
-    margin: 0;
-    padding: 0;
-} */
+*{  
+    background-color: black;
+    color: white;
+    font-family: 'poppins';
+}
+h2{
+    font-size: 4em;
+}
 body{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-form{
-    display: flex;
-    flex-direction: column;
-    margin: 20px;
+button{
+    font-size: 2.5rem;
+    border-radius: 35px;
+    padding: 5px 15px;
+    border: 3px solid white;
 }
-.openForm{
-    padding: 10px;
+button:hover{
+    cursor: pointer;
 }
 
-button{
-    padding: 5px;
+dialog{
+    margin-top: 400px;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 25px;
+}
+ label > input{
+    border: 2px solid white;
+    font-size: 2.5rem;
+    border-radius: 35px;
+    padding: 5px 10px;
+ }
+form{    
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    margin: 10px;
 }
 
 .card{
+    font-size: 2.5rem;
     height: fit-content;
     width: fit-content;
     display: flex;
@@ -29,48 +50,53 @@ button{
     gap: 15px;
     flex-wrap: wrap;
     padding: 10px;
-    margin: 5px;
-    border: 2px solid rgb(48, 68, 0);
+    /* margin: 5px; */
+    border: 2px solid rgb(0, 255, 221);
     max-width: fit-content;
     padding: 15px;
     border-radius: 15px;
+    transition: 0.1s ease-in;
+}
+.card:hover{
+    box-shadow: 1px 1px 30px rgb(0, 195, 255);
+
+}
+.cardContainer{
+    padding: 20px;
+    gap: 20px;
+    display: flex;
+    width: 100vw;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+#delete{
+    transition: 0.1s ease-in;
+}
+#delete:hover{
+    background-color: red;
+    box-shadow: 1px 1px 100px red;
+    color: rgb(255, 255, 255);
+}
+.openForm{
+    display: flex;
+    flex-direction: column;
+gap: 15px;
+    font-size: 2.5rem;
+}
+.openForm > button{
+    margin-bottom: 35px;
+    transition: 0.1s ease-in;
+}
+.openForm > button:hover{
+    background-color: rgb(255, 255, 255);
+    color: black;
+    box-shadow: 1px 1px 50px magenta;
 }
 
+#addBook:hover{
+    background-color: white;
+    color: black;
+    box-shadow: 1px 1px 50px magenta;
 
-
-div label input {
-    margin-right:100px;
- }
- body {
-     font-family:sans-serif;
- }
- 
- #ck_button {
-     margin:4px;
-     background-color:#EFEFEF;
-     border-radius:4px;
-     border:1px solid #D0D0D0;
-     overflow:auto;
-     float:left;
- }
- 
- #ck_button label {
-     float:left;
-     width:4.0em;
- }
- 
- #ck_button label span {
-     text-align:center;
-     padding:3px 0px;
-     display:block;
- }
- 
- #ck_button label input {
-     position:absolute;
-     top:-20px;
- }
- 
- #ck_button input:checked + span {
-     background-color:#911;
-     color:#fff;
- }
+}

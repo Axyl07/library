@@ -29,17 +29,18 @@ function addToLibrary(theBook) {
 const input = document.querySelector('input');
 const add = document.querySelector('#addBook');
 add.addEventListener('click', (event) => {
-    // event.preventDefault();
     const title = document.querySelector('#title');
     const author = document.querySelector('#author');
     const pages = document.querySelector('#pages');
     if (title.value === '' || author.value === '' || pages.value === '') {
-        // alert('Please fill the fields');
     } else {
         const createdBook = new book(title.value, author.value, pages.value);
         addToLibrary(createdBook);
         displayBooks(myLibrary);
-        // dialog.close();
+        title.value = '';
+        author.value = '';
+        pages.value = '';
+        dialog.close();
     }
 })
 
@@ -52,10 +53,6 @@ open.addEventListener('click', () => {
 
 const cardContainer = document.querySelector('.cardContainer');
 
-// const cardContainer = document.createElement('div');
-cardContainer.style.display = 'flex';
-cardContainer.style.flexWrap = 'wrap'
-cardContainer.style.maxWidth = '100vw';
 function displayBooks(myLibrary) {
     const card = document.createElement('div');
     card.className = 'card';
@@ -63,8 +60,8 @@ function displayBooks(myLibrary) {
     const authorDiv = document.createElement('div');
     const pageDiv = document.createElement('div');
     const readStatus = document.createElement('div');
-    readStatus.textContent = 'Not Read';
     const deleteButton = document.createElement('button');
+    deleteButton.id = 'delete'
     deleteButton.textContent = 'Delete Book';
     deleteButton.addEventListener('click', () => {
         cardContainer.removeChild(card);
@@ -72,22 +69,30 @@ function displayBooks(myLibrary) {
 
    
     const readButton = document.createElement('button');
-    readButton.textContent = "Read?";
-    let status = false;
-    if (!status) {
-        readButton.addEventListener('click', () => {
-            status = true;
-            readStatus.textContent = "Read";
-            readButton.textContent = "Not Read"
-        })
-    } else {
-        readButton.addEventListener('click', () => {
-            // status = false;
-            readStatus.textContent = "Not Read";
-            readButton.textContent = "Read"
-        })
+    readButton.textContent = "Read";
+    readStatus.textContent = 'Current Status : Not read';
+
+    function flipReadStatus() {
+        readButton.textContent = 'Read';
+        readStatus.textContent = 'Current Status : Read';
+    }
+    function flipbackReadStatus() {
+        readButton.textContent = "Not Read";
+        readStatus.textContent = 'Current Status : Not read';
     }
 
+    readButton.addEventListener('click', () => {
+        if (readButton.textContent === 'Not Read') {
+            flipReadStatus();
+            readButton.style.backgroundColor = 'limegreen'
+            readButton.style.boxShadow = '1px 1px 25px limegreen'
+        } else{
+            flipbackReadStatus();
+            readButton.style.backgroundColor = 'Red'
+            readButton.style.boxShadow = '1px 1px 25px red'
+
+        }
+    })
 
     for (let index = 0; index < myLibrary.length; index++) {
         const bookObjects = myLibrary[index];
@@ -98,8 +103,8 @@ function displayBooks(myLibrary) {
     card.appendChild(titleDiv);
     card.appendChild(authorDiv);
     card.appendChild(pageDiv);
-    card.appendChild(deleteButton);
     card.appendChild(readButton);
     card.appendChild(readStatus);
+    card.appendChild(deleteButton);
     cardContainer.appendChild(card);
 }
