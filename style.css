@@ -1,9 +1,7 @@
-.card{
-    border: 2px solid grey;
-    max-width: fit-content;
-    padding: 15px;
-    border-radius: 15px;
-}
+/* *{
+    margin: 0;
+    padding: 0;
+} */
 body{
     display: flex;
     flex-direction: column;
@@ -22,3 +20,57 @@ form{
 button{
     padding: 5px;
 }
+
+.card{
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex-wrap: wrap;
+    padding: 10px;
+    margin: 5px;
+    border: 2px solid rgb(48, 68, 0);
+    max-width: fit-content;
+    padding: 15px;
+    border-radius: 15px;
+}
+
+
+
+div label input {
+    margin-right:100px;
+ }
+ body {
+     font-family:sans-serif;
+ }
+ 
+ #ck_button {
+     margin:4px;
+     background-color:#EFEFEF;
+     border-radius:4px;
+     border:1px solid #D0D0D0;
+     overflow:auto;
+     float:left;
+ }
+ 
+ #ck_button label {
+     float:left;
+     width:4.0em;
+ }
+ 
+ #ck_button label span {
+     text-align:center;
+     padding:3px 0px;
+     display:block;
+ }
+ 
+ #ck_button label input {
+     position:absolute;
+     top:-20px;
+ }
+ 
+ #ck_button input:checked + span {
+     background-color:#911;
+     color:#fff;
+ }
