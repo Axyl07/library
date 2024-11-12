@@ -51,14 +51,14 @@ form{
     flex-wrap: wrap;
     padding: 10px;
     /* margin: 5px; */
-    border: 2px solid rgb(0, 255, 221);
+    border: 2px solid rgb(255, 255, 255);
     max-width: fit-content;
     padding: 15px;
     border-radius: 15px;
     transition: 0.1s ease-in;
 }
 .card:hover{
-    box-shadow: 1px 1px 30px rgb(0, 195, 255);
+    box-shadow: 1px 1px 30px rgb(255, 255, 255);
 
 }
 .cardContainer{

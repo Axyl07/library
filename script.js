@@ -69,8 +69,11 @@ function displayBooks(myLibrary) {
 
    
     const readButton = document.createElement('button');
-    readButton.textContent = "Read";
+    readButton.textContent = "Not Read";
     readStatus.textContent = 'Current Status : Not read';
+    readButton.style.backgroundColor = 'Red'
+    readButton.style.boxShadow = '1px 1px 25px red'
+    
 
     function flipReadStatus() {
         readButton.textContent = 'Read';
