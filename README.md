@@ -1,6 +1,4 @@
-Here’s a basic README template for your **Library** project. You can expand on it based on specific details in your code and usage instructions:
 
----
 
 # Library
 
