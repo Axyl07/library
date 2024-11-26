@@ -24,6 +24,7 @@ button:hover{
     scale: 1.05;
 }
 
+
 dialog{
     margin-top: 400px;
     width: fit-content;
@@ -81,6 +82,9 @@ form{
     box-shadow: 1px 1px 100px red;
     color: rgb(255, 255, 255);
 }
+#delete:active{
+    transform: scale(0.95);
+}
 .openForm{
     display: flex;
     flex-direction: column;
@@ -97,11 +101,16 @@ gap: 15px;
     box-shadow: 1px 1px 50px magenta;
     transform: scale(1.05);
 }
-
+.openForm>button:active{
+    transform: scale(0.95);
+}
 #addBook:hover{
     background-color: white;
     color: black;
     box-shadow: 1px 1px 50px magenta;
     transform: scale(1.05);
 
+}
+#addBook:active{
+    transform: scale(0.95);
 }
